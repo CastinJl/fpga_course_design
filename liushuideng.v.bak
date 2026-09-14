@@ -1,0 +1,34 @@
+module liushuideng(clk,led,rst);
+   input clk;
+	input rst;
+	output [11:0] led;
+	reg [3:0] count;
+	reg [11:0] led1;
+	always@(posedge clk or negedge rst)
+	  if(!rst)  
+	        count=4'b0000;
+		else   count = count +4'b0001 ;
+	always@(count)
+	 case (count)
+	 4'b0000: led1 <= 12'b000000000001;
+	 4'b0001: led1 <= 12'b000000000010;
+	 4'b0010: led1 <= 12'b000000000100;
+	 4'b0011: led1 <= 12'b000000001000;
+	 4'b0100: led1 <= 12'b000000010000;
+	 4'b0101: led1 <= 12'b000000100000;
+	 4'b0110: led1 <= 12'b000001000000;
+	 4'b0111: led1 <= 12'b000010000000;
+	 4'b1000: led1 <= 12'b000100000000;
+	 4'b1001: led1 <= 12'b001000000000;
+	 4'b1010: led1 <= 12'b010000000000;
+	 4'b1011: led1 <= 12'b100000000000;
+	 4'b1100: led1 <= 12'b010101010101;
+	 4'b1101: led1 <= 12'b101010101010;
+	 4'b1110: led1 <= 12'b010101010101;
+	 4'b1111: led1 <= 12'b111111111111;
+	 default: led1 <= 12'b111111111111;
+	 endcase
+	 assign led = ~led1;
+	 endmodule 
+	 
+	 

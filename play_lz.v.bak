@@ -1,0 +1,59 @@
+module play_lz(	
+	CLK50MHZ,
+	SPK_XX,
+	HIGH,
+	LED
+);
+input CLK50MHZ;
+output HIGH;
+output SPK_XX;
+output [3:0] LED;
+reg HIGH;
+reg SPK_XX;
+reg [3:0] LED;
+
+wire c0;
+wire c1;
+PLL	PLL_inst (
+	.inclk0 ( CLK50MHZ ),
+	.c0 ( c0),
+	.c1 ( c1 )
+	);
+
+wire clk4hz
+FDIV fdiv(
+	.CLK(c1),
+	.PM(clk4hz)
+	);
+
+wire [7:0] cnt8;
+CNT138T cnt138(
+	.CLK(clk4hz),
+	.CNT8(cnt8)
+	);
+
+wire [3:0] q;
+music	music_inst (
+	.address ( cnt8 ),
+	.clock ( clk4hz ),
+	.q ( q )
+	);
+
+wire [10:0] TN;
+F_CODE fcode (
+	.INX(q),
+	.CODE(LED),
+	.TO(TN),
+	.H(HIGH)
+	);
+
+wire spk;
+SPEKER speker (
+	.CLK(c0),
+	.TN(TN),
+	.SPKS()
+);
+	
+	
+	
+endmodule 

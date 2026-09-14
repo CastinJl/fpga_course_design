@@ -1,0 +1,21 @@
+# ==========================================
+# Quartus 临时文件与编译输出过滤规则
+# ==========================================
+db
+incremental_db
+output_files
+simulation
+greybox
+hc_output
+.qsys_edit
+hps_isw_handoff
+.rpt
+.summary
+.done
+.smsg
+.bak
+.orig
+.ddb
+.csv
+.cmp.rdb
+.qdf
