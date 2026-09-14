@@ -272,6 +272,9 @@ set_global_assignment -name VERILOG_FILE phase_accumulator.v
 set_global_assignment -name VERILOG_FILE square_wave_gen.v
 set_global_assignment -name VERILOG_FILE wave_mux.v
 set_global_assignment -name VERILOG_FILE triangle_wave_gen.v
+set_global_assignment -name VERILOG_FILE key_frontend.v
+set_global_assignment -name VERILOG_FILE wave_select_ctrl.v
+set_global_assignment -name VERILOG_FILE frequency_ctrl.v
 set_global_assignment -name VERILOG_FILE IO_led.v
 set_global_assignment -name VERILOG_FILE ERZP.v
 set_global_assignment -name VERILOG_FILE key_lcd.v
@@ -291,6 +294,8 @@ set_location_assignment PIN_G8 -to VGA_D[7]
 set_location_assignment PIN_E6 -to VGA_D[11]
 set_location_assignment PIN_A19 -to SPK_KX
 set_location_assignment PIN_C6 -to tmdX_data_n[1]
+
+
 
 
 
