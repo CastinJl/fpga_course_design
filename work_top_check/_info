@@ -1,0 +1,473 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Castin/Desktop/fpga-course-design/test/1_KXMS65P_10CL055_TEST
+vam_modulator
+Z1 !s110 1789474095
+!i10b 1
+!s100 O]Bi5j9<KS`BUzmenc:^E2
+IVOjCX1TMl91O4lz:0Pm052
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1789441520
+8am_modulator.v
+Fam_modulator.v
+L0 3
+Z3 OL;L;10.5;63
+r1
+!s85 0
+31
+Z4 !s108 1789474095.000000
+Z5 !s107 output_files\CESHI_altera.v|dac902_if.v|modulation_mode_ctrl.v|output_mode_mux.v|fsk_modulator.v|fsk_data_gen.v|ask_modulator.v|ask_data_gen.v|fm_modulator.v|pm_modulator.v|am_modulator.v|fm_modulation_signal_gen.v|pm_modulation_signal_gen.v|modulation_signal_gen.v|frequency_ctrl.v|wave_select_ctrl.v|key_frontend.v|wave_mux.v|triangle_wave_gen.v|square_wave_gen.v|sine_wave_gen.v|phase_accumulator.v|
+Z6 !s90 -work|work_top_check|phase_accumulator.v|sine_wave_gen.v|square_wave_gen.v|triangle_wave_gen.v|wave_mux.v|key_frontend.v|wave_select_ctrl.v|frequency_ctrl.v|modulation_signal_gen.v|pm_modulation_signal_gen.v|fm_modulation_signal_gen.v|am_modulator.v|pm_modulator.v|fm_modulator.v|ask_data_gen.v|ask_modulator.v|fsk_data_gen.v|fsk_modulator.v|output_mode_mux.v|modulation_mode_ctrl.v|dac902_if.v|output_files\CESHI_altera.v|
+!i113 0
+Z7 o-work work_top_check -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z8 tCvgOpt 0
+vask_data_gen
+R1
+!i10b 1
+!s100 TGkCF88MUW<BHi??>JohY1
+I2h@3T4O`84a9odonmgI[^1
+R2
+R0
+w1789469761
+8ask_data_gen.v
+Fask_data_gen.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+vask_modulator
+R1
+!i10b 1
+!s100 81SkFmFhj>VP@F[D8@WF`1
+ImTW^N1ZeELI9XW4F[QeBi0
+R2
+R0
+w1789469762
+8ask_modulator.v
+Fask_modulator.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+vCESHI_altera
+R1
+!i10b 1
+!s100 ]5mS;Di>eJbEXz]UMzIz32
+IzZH6f[NSgUdA=k1J5N<c42
+R2
+R0
+w1789473983
+8output_files\CESHI_altera.v
+Foutput_files\CESHI_altera.v
+L0 5
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+n@c@e@s@h@i_altera
+vdac902_if
+R1
+!i10b 1
+!s100 lLH[3D>QJID4k<No=N@Xk0
+IEdoL2STUB8QgZ?EA;>`fP1
+R2
+R0
+w1789383247
+8dac902_if.v
+Fdac902_if.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+vfm_modulation_signal_gen
+R1
+!i10b 1
+!s100 NoW]@hdUD83A9NZ8m2ncA3
+IGk7_NT?e0JABZMG?Idg`90
+R2
+R0
+w1789468672
+8fm_modulation_signal_gen.v
+Ffm_modulation_signal_gen.v
+L0 4
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+vfm_modulator
+R1
+!i10b 1
+!s100 h110Vm`^Qnz7goOiB:]SM0
+I<aNC1a4mnKdLHCQFP;;1R3
+R2
+R0
+w1789450348
+8fm_modulator.v
+Ffm_modulator.v
+L0 4
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+vfrequency_ctrl
+R1
+!i10b 1
+!s100 SnnkUgLK`b@=VXcg5fL2c2
+IZ1Z3KclCSjgIS<bkdEY9h0
+R2
+R0
+w1789387846
+8frequency_ctrl.v
+Ffrequency_ctrl.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+vfsk_data_gen
+R1
+!i10b 1
+!s100 SPYhEQ1=bAVf`Z;^TbK[j3
+I=SkljG[e@oD6o^>eiLAh[2
+R2
+R0
+w1789473980
+8fsk_data_gen.v
+Ffsk_data_gen.v
+L0 4
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+vfsk_modulator
+R1
+!i10b 1
+!s100 6I[<?iz[f5`e@Zoo=1;ci3
+Ih]hj;5KAN4mY05K[I9j@o3
+R2
+R0
+w1789473981
+8fsk_modulator.v
+Ffsk_modulator.v
+L0 4
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+vkey_frontend
+R1
+!i10b 1
+!s100 G^`>KmO]0:Ce[?9A[i`IH2
+Imh1l>^XkU3aF^^C2V3JTT3
+R2
+R0
+w1789387309
+8key_frontend.v
+Fkey_frontend.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+vmodulation_mode_ctrl
+R1
+!i10b 1
+!s100 jAYBz?ljf@WDAo7;^@>V^1
+IU853cinoi2PTz0ZMlfD=E2
+R2
+R0
+w1789471098
+8modulation_mode_ctrl.v
+Fmodulation_mode_ctrl.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+vmodulation_signal_gen
+R1
+!i10b 1
+!s100 CeL16dG4YG;giDai0e6?H1
+IJnO0b]Q@1B4j1UDcfaC>13
+R2
+R0
+w1789392844
+8modulation_signal_gen.v
+Fmodulation_signal_gen.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+voutput_mode_mux
+R1
+!i10b 1
+!s100 UHMI2VJlg4Dh`=dZc5^7c0
+I95F?;aK[PaGcS8coJo7if3
+R2
+R0
+w1789471149
+8output_mode_mux.v
+Foutput_mode_mux.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+vphase_accumulator
+R1
+!i10b 1
+!s100 l]OHd?`H8MHn74b[>SleR0
+IW^>Vo:W<6S2@2VHdgC6]K3
+R2
+R0
+w1789387888
+8phase_accumulator.v
+Fphase_accumulator.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+vpm_modulation_signal_gen
+R1
+!i10b 1
+!s100 PV?ilbA5ZzIi004SEN56n0
+I8ld85Qe>1TT0G7<2iM0i>1
+R2
+R0
+w1789467209
+8pm_modulation_signal_gen.v
+Fpm_modulation_signal_gen.v
+L0 4
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+vpm_modulator
+R1
+!i10b 1
+!s100 `E<D8<le^NT7nZznch?LU3
+IzGf66=3@Xj__SQhKMBSIQ3
+R2
+R0
+w1789447722
+8pm_modulator.v
+Fpm_modulator.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+vsine_wave_gen
+R1
+!i10b 1
+!s100 FU`SI8T4Wc[W1_79KezWi0
+IdW@hP6U7IeZXGC0[cb71l2
+R2
+R0
+w1789384837
+8sine_wave_gen.v
+Fsine_wave_gen.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+vsquare_wave_gen
+R1
+!i10b 1
+!s100 DD2:^Bi1II95<ZgCndmlK3
+I[PK;<6Q7daMkOg^RPKeAo0
+R2
+R0
+w1789384838
+8square_wave_gen.v
+Fsquare_wave_gen.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+vtriangle_wave_gen
+R1
+!i10b 1
+!s100 45=DOI^QSY3[Nm4RKzjS]1
+IMkcig3JP6V@RJ;lLa?2Sz1
+R2
+R0
+w1789385990
+8triangle_wave_gen.v
+Ftriangle_wave_gen.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+vwave_mux
+R1
+!i10b 1
+!s100 Y5FHg>hIe4nd2[24982]e3
+I@HLDTl>OBgDmKCNLWaloP3
+R2
+R0
+w1789385991
+8wave_mux.v
+Fwave_mux.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+vwave_select_ctrl
+R1
+!i10b 1
+!s100 E:lc_1@ZZE6l8Va_Sg64k1
+IZlJ8OV4;REm05i?GBCcD>0
+R2
+R0
+w1789387063
+8wave_select_ctrl.v
+Fwave_select_ctrl.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8

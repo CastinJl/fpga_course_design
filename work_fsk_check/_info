@@ -1,0 +1,155 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Castin/Desktop/fpga-course-design/test/1_KXMS65P_10CL055_TEST
+T_opt
+!s110 1789474055
+VMKf]SnG??bo=ngS0M57dC3
+04 16 4 work fsk_modulator_tb fast 0
+=1-40c2ba4efc99-6aa93507-34b-82d4
+Z1 o-quiet -auto_acc_if_foreign -work work_fsk_check
+Z2 tCvgOpt 0
+n@_opt
+Z3 OL;O;10.5;63
+R0
+T_opt1
+!s110 1789474057
+V@fD6h3`:Z>R7XDSUF]Ikm3
+04 12 4 work fsk_chain_tb fast 0
+=1-40c2ba4efc99-6aa93509-1ce-75cc
+R1
+R2
+n@_opt1
+R3
+vfsk_chain_tb
+Z4 !s110 1789474054
+!i10b 1
+!s100 >GF2T2`goJ_lBU_c77ZG]0
+Ie@Ej<g3OMWFiT<EBol_Td3
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1789473985
+8fsk_chain_tb.v
+Ffsk_chain_tb.v
+L0 3
+Z6 OL;L;10.5;63
+r1
+!s85 0
+31
+Z7 !s108 1789474054.000000
+Z8 !s107 fsk_chain_tb.v|fsk_modulator_tb.v|fsk_modulator.v|fsk_data_gen.v|sine_wave_gen.v|phase_accumulator.v|
+Z9 !s90 -work|work_fsk_check|phase_accumulator.v|sine_wave_gen.v|fsk_data_gen.v|fsk_modulator.v|fsk_modulator_tb.v|fsk_chain_tb.v|
+!i113 0
+Z10 o-work work_fsk_check -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vfsk_data_gen
+R4
+!i10b 1
+!s100 SPYhEQ1=bAVf`Z;^TbK[j3
+I[T==X7d:mOo]@OTDg6EXK1
+R5
+R0
+w1789473980
+8fsk_data_gen.v
+Ffsk_data_gen.v
+L0 4
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R2
+vfsk_modulator
+R4
+!i10b 1
+!s100 6I[<?iz[f5`e@Zoo=1;ci3
+Iz=NbcM@=QJ8cBi`WciWnk1
+R5
+R0
+w1789473981
+8fsk_modulator.v
+Ffsk_modulator.v
+L0 4
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R2
+vfsk_modulator_tb
+R4
+!i10b 1
+!s100 QC[:fQIh=bdX=:NX:b>Il2
+I0jg5mD9=9`62LTN^GUf4Y3
+R5
+R0
+w1789473987
+8fsk_modulator_tb.v
+Ffsk_modulator_tb.v
+L0 3
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R2
+vphase_accumulator
+R4
+!i10b 1
+!s100 l]OHd?`H8MHn74b[>SleR0
+I=`QK3SJKAUjkZU4lK=FH22
+R5
+R0
+w1789387888
+8phase_accumulator.v
+Fphase_accumulator.v
+L0 2
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R2
+vsine_wave_gen
+R4
+!i10b 1
+!s100 FU`SI8T4Wc[W1_79KezWi0
+ImlWOKc8A7`O>M?VAO[dHF1
+R5
+R0
+w1789384837
+8sine_wave_gen.v
+Fsine_wave_gen.v
+L0 3
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R2
