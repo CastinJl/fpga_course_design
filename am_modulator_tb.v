@@ -42,22 +42,22 @@ module am_modulator_tb;
         carrier_data = 12'd4095;
         mod_data     = 12'd0;
         #1;
-        if (am_data != 12'd2559) begin
-            $display("FAIL positive carrier low envelope expected 2559 got %0d", am_data);
+        if (am_data != 12'd2048) begin
+            $display("FAIL positive carrier low envelope expected 2048 got %0d", am_data);
             failures = failures + 1;
         end
 
         mod_data = 12'd4095;
         #1;
-        if (am_data != 12'd3582) begin
-            $display("FAIL high envelope expected 3582 got %0d", am_data);
+        if (am_data != 12'd4093) begin
+            $display("FAIL high envelope expected 4093 got %0d", am_data);
             failures = failures + 1;
         end
 
         carrier_data = 12'd0;
         #1;
-        if (am_data != 12'd512) begin
-            $display("FAIL negative carrier high envelope expected 512 got %0d", am_data);
+        if (am_data != 12'd0) begin
+            $display("FAIL negative carrier high envelope expected 0 got %0d", am_data);
             failures = failures + 1;
         end
 

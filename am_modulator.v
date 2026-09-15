@@ -17,9 +17,9 @@ module am_modulator(
         carrier_signed = $signed({1'b0, carrier_data}) - 13'sd2048;
         mod_signed     = $signed({1'b0, mod_data}) - 13'sd2048;
 
-        // Carrier amplitude is 1/2 of full scale; modulation depth is 50%.
+        // Carrier amplitude is 1/2 of full scale; modulation depth is 100%.
         carrier_scaled = carrier_signed >>> 1;
-        envelope       = 13'sd2048 + (mod_signed >>> 1);
+        envelope       = 13'sd2048 + mod_signed;
 
         product       = carrier_scaled * envelope;
         output_signed = 27'sd2048 + (product >>> 11);
