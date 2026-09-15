@@ -11,6 +11,7 @@ module modulation_mode_ctrl_tb;
     wire fm_enable;
     wire ask_enable;
     wire fsk_enable;
+    wire psk_enable;
     integer failures;
 
     modulation_mode_ctrl dut (
@@ -23,7 +24,8 @@ module modulation_mode_ctrl_tb;
         .pm_enable    (pm_enable),
         .fm_enable    (fm_enable),
         .ask_enable   (ask_enable),
-        .fsk_enable   (fsk_enable)
+        .fsk_enable   (fsk_enable),
+        .psk_enable   (psk_enable)
     );
 
     always #5 clk = ~clk;
@@ -60,14 +62,20 @@ module modulation_mode_ctrl_tb;
         end
 
         press_fm_key;
-        if (!fsk_enable || ask_enable || fm_enable || am_enable || pm_enable) begin
+        if (!fsk_enable || ask_enable || psk_enable || fm_enable || am_enable || pm_enable) begin
             $display("FAIL third KEY7 press did not select FSK");
             failures = failures + 1;
         end
 
         press_fm_key;
-        if (fsk_enable || ask_enable || fm_enable || am_enable || pm_enable) begin
-            $display("FAIL fourth KEY7 press did not return normal");
+        if (!psk_enable || fsk_enable || ask_enable || fm_enable || am_enable || pm_enable) begin
+            $display("FAIL fourth KEY7 press did not select PSK");
+            failures = failures + 1;
+        end
+
+        press_fm_key;
+        if (psk_enable || fsk_enable || ask_enable || fm_enable || am_enable || pm_enable) begin
+            $display("FAIL fifth KEY7 press did not return normal");
             failures = failures + 1;
         end
 

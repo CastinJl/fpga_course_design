@@ -287,6 +287,8 @@ set_global_assignment -name VERILOG_FILE ask_data_gen.v
 set_global_assignment -name VERILOG_FILE ask_modulator.v
 set_global_assignment -name VERILOG_FILE fsk_modulator.v
 set_global_assignment -name VERILOG_FILE fsk_data_gen.v
+set_global_assignment -name VERILOG_FILE psk_data_gen.v
+set_global_assignment -name VERILOG_FILE psk_modulator.v
 set_global_assignment -name VERILOG_FILE output_mode_mux.v
 set_global_assignment -name VERILOG_FILE IO_led.v
 set_global_assignment -name VERILOG_FILE ERZP.v
@@ -307,6 +309,7 @@ set_location_assignment PIN_G8 -to VGA_D[7]
 set_location_assignment PIN_E6 -to VGA_D[11]
 set_location_assignment PIN_A19 -to SPK_KX
 set_location_assignment PIN_C6 -to tmdX_data_n[1]
+
 
 
 

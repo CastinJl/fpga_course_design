@@ -1,0 +1,186 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Castin/Desktop/fpga-course-design/test/1_KXMS65P_10CL055_TEST
+T_opt
+!s110 1789475144
+VobQklQi_T[1SaL_=:=^Y[1
+04 16 4 work psk_modulator_tb fast 0
+=1-40c2ba4efc99-6aa93948-247-44e0
+Z1 o-quiet -auto_acc_if_foreign -work work_psk_check
+Z2 tCvgOpt 0
+n@_opt
+Z3 OL;O;10.5;63
+R0
+T_opt1
+!s110 1789475146
+Vk_j;CzaOlc?5ST33m5imN0
+04 15 4 work psk_data_gen_tb fast 0
+=1-40c2ba4efc99-6aa9394a-9a-698c
+R1
+R2
+n@_opt1
+R3
+R0
+T_opt2
+!s110 1789475147
+VWH3k0FMSaWEiNh2FIV<OU0
+04 23 4 work modulation_mode_ctrl_tb fast 0
+=1-40c2ba4efc99-6aa9394b-301-8cc8
+R1
+R2
+n@_opt2
+R3
+vmodulation_mode_ctrl
+Z4 !s110 1789475143
+!i10b 1
+!s100 A?KmC]f;m:A7@5W5<PNlR0
+I3H2`OOAS:>InfOg2GbIaK0
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1789475004
+8modulation_mode_ctrl.v
+Fmodulation_mode_ctrl.v
+L0 3
+Z6 OL;L;10.5;63
+r1
+!s85 0
+31
+Z7 !s108 1789475143.000000
+Z8 !s107 modulation_mode_ctrl_tb.v|modulation_mode_ctrl.v|psk_data_gen_tb.v|psk_modulator_tb.v|psk_data_gen.v|psk_modulator.v|sine_wave_gen.v|
+Z9 !s90 -work|work_psk_check|sine_wave_gen.v|psk_modulator.v|psk_data_gen.v|psk_modulator_tb.v|psk_data_gen_tb.v|modulation_mode_ctrl.v|modulation_mode_ctrl_tb.v|
+!i113 0
+Z10 o-work work_psk_check -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vmodulation_mode_ctrl_tb
+R4
+!i10b 1
+!s100 E<G0B1LD7]VICSn<`HX:@3
+I=OS1?:PW;lA=9cPUeAND03
+R5
+R0
+w1789475009
+8modulation_mode_ctrl_tb.v
+Fmodulation_mode_ctrl_tb.v
+L0 3
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R2
+vpsk_data_gen
+R4
+!i10b 1
+!s100 KCX8jVEB<i`ZSiGgoXI<51
+IBZVkJ;RJ8GQe>5o5f;0Re2
+R5
+R0
+w1789475002
+8psk_data_gen.v
+Fpsk_data_gen.v
+L0 4
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R2
+vpsk_data_gen_tb
+R4
+!i10b 1
+!s100 zY4PUd[GNJ;laR?]N9U5H2
+IQR;IKQj;<jY[Ch_dhm8;a3
+R5
+R0
+w1789475095
+8psk_data_gen_tb.v
+Fpsk_data_gen_tb.v
+L0 3
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R2
+vpsk_modulator
+R4
+!i10b 1
+!s100 k6X7:Cl>gQXz63aI1VGU?0
+IBIHOc8LE1IzfQ25A4WL7h2
+R5
+R0
+w1789475003
+8psk_modulator.v
+Fpsk_modulator.v
+L0 3
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R2
+vpsk_modulator_tb
+R4
+!i10b 1
+!s100 3l?T25aaPd8W>dC15E6EC3
+IFbZZE:OE2khWC4J0acNCW1
+R5
+R0
+w1789475094
+8psk_modulator_tb.v
+Fpsk_modulator_tb.v
+L0 3
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R2
+vsine_wave_gen
+R4
+!i10b 1
+!s100 FU`SI8T4Wc[W1_79KezWi0
+IZ9<haCXY_CIB5g7_Z;dBX3
+R5
+R0
+w1789384837
+8sine_wave_gen.v
+Fsine_wave_gen.v
+L0 3
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R2
