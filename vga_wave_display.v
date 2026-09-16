@@ -5,12 +5,15 @@ module vga_wave_display(
     input             clk,
     input             reset_n,
     input      [11:0] wave_data,
+    input             pm_enable,
+    input             fm_enable,
     output            VGA_HSYNC,
     output            VGA_VSYNC,
     output reg [11:0] VGA_D
 );
 
     localparam integer H_ACTIVE = 640;
+    localparam integer PMFM_CAPTURE = 480; // PM/FM use 3/4 of the previous time window.
     localparam integer H_TOTAL  = 801; // Keep the timing of the verified vgaV module.
     localparam integer V_ACTIVE = 480;
     localparam integer V_TOTAL  = 526;
@@ -30,15 +33,24 @@ module vga_wave_display(
     reg        display_bank;
     reg        display_valid;
     reg [11:0] previous_wave_data;
+    reg [3:0]  capture_step;
+    reg [3:0]  sample_skip_count;
+    reg [9:0]  capture_length;
 
     wire display_enable = (hcnt < H_ACTIVE) && (vcnt < V_ACTIVE);
     wire frame_start = (hcnt == 10'd0) && (vcnt == 10'd0);
-    wire [9:0] display_addr = (hcnt < H_ACTIVE) ? hcnt : 10'd0;
+    wire [10:0] display_scaled_addr = {1'b0, hcnt} + ({1'b0, hcnt} << 1);
+    wire [9:0] display_addr = (hcnt < H_ACTIVE) ?
+                              ((pm_enable || fm_enable) ?
+                               (display_scaled_addr >> 2) : hcnt) : 10'd0;
     wire [11:0] display_sample;
     wire [21:0] sample_ext;
     wire [31:0] scaled_product;
     wire [9:0]  waveform_y;
     wire trigger_event;
+    wire [3:0] requested_capture_step = (pm_enable || fm_enable) ? 4'd8 : 4'd1;
+    wire [9:0] requested_capture_length = (pm_enable || fm_enable) ?
+                                          PMFM_CAPTURE : H_ACTIVE;
 
     assign VGA_HSYNC = hs;
     assign VGA_VSYNC = vs;
@@ -107,6 +119,9 @@ module vga_wave_display(
             display_bank   <= 1'b1;
             display_valid <= 1'b0;
             previous_wave_data <= 12'd2048;
+            capture_step <= 4'd1;
+            sample_skip_count <= 4'd0;
+            capture_length <= H_ACTIVE;
         end
         else begin
             previous_wave_data <= wave_data;
@@ -119,6 +134,7 @@ module vga_wave_display(
                     capture_idx   <= 10'd0;
                     capture_active <= 1'b0;
                     capture_done  <= 1'b0;
+                    sample_skip_count <= 4'd0;
                 end
             end
             else if (!capture_active) begin
@@ -128,23 +144,32 @@ module vga_wave_display(
                     else
                         sample_mem0[0] <= wave_data;
 
+                    capture_step    <= requested_capture_step;
+                    capture_length  <= requested_capture_length;
                     capture_idx    <= 10'd1;
                     capture_active <= 1'b1;
+                    sample_skip_count <= 4'd0;
                 end
             end
             else begin
-                if (capture_bank)
-                    sample_mem1[capture_idx] <= wave_data;
-                else
-                    sample_mem0[capture_idx] <= wave_data;
+                if (sample_skip_count == capture_step - 1'b1) begin
+                    if (capture_bank)
+                        sample_mem1[capture_idx] <= wave_data;
+                    else
+                        sample_mem0[capture_idx] <= wave_data;
 
-                if (capture_idx == H_ACTIVE - 1) begin
-                    capture_idx    <= 10'd0;
-                    capture_active <= 1'b0;
-                    capture_done   <= 1'b1;
+                    sample_skip_count <= 4'd0;
+                    if (capture_idx == capture_length - 1'b1) begin
+                        capture_idx    <= 10'd0;
+                        capture_active <= 1'b0;
+                        capture_done   <= 1'b1;
+                    end
+                    else begin
+                        capture_idx <= capture_idx + 1'b1;
+                    end
                 end
                 else begin
-                    capture_idx <= capture_idx + 1'b1;
+                    sample_skip_count <= sample_skip_count + 1'b1;
                 end
             end
         end

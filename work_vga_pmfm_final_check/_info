@@ -1,0 +1,166 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Castin/Desktop/fpga-course-design/test/1_KXMS65P_10CL055_TEST
+T_opt
+Z1 !s110 1789561782
+VIH:9g4:7UifSIbS>V?eR20
+04 19 4 work vga_wave_display_tb fast 0
+=1-40c2ba4efc99-6aaa8bb6-381-6f18
+o-quiet -auto_acc_if_foreign -work work_vga_pmfm_final_check
+Z2 tCvgOpt 0
+n@_opt
+OL;O;10.5;63
+vfm_modulation_signal_gen
+R1
+!i10b 1
+!s100 NoW]@hdUD83A9NZ8m2ncA3
+IA0G0J<e=b?N2:gW3ji3J93
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1789468672
+8fm_modulation_signal_gen.v
+Ffm_modulation_signal_gen.v
+L0 4
+Z4 OL;L;10.5;63
+r1
+!s85 0
+31
+Z5 !s108 1789561781.000000
+Z6 !s107 vga_wave_display_tb.v|vga_wave_display.v|pm_modulator.v|fm_modulation_signal_gen.v|pm_modulation_signal_gen.v|sine_wave_gen.v|phase_accumulator.v|
+Z7 !s90 -work|work_vga_pmfm_final_check|phase_accumulator.v|sine_wave_gen.v|pm_modulation_signal_gen.v|fm_modulation_signal_gen.v|pm_modulator.v|vga_wave_display.v|vga_wave_display_tb.v|
+!i113 0
+Z8 o-work work_vga_pmfm_final_check -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vphase_accumulator
+R1
+!i10b 1
+!s100 l]OHd?`H8MHn74b[>SleR0
+IN]fD0TbNY9NAMOnjNJ>_f3
+R3
+R0
+w1789387888
+8phase_accumulator.v
+Fphase_accumulator.v
+L0 2
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 0
+R8
+R2
+vpm_modulation_signal_gen
+R1
+!i10b 1
+!s100 M]fLD>S::8:?A^cP[gm?T0
+IPbHZ7OU?hO;zg]V9SaEH51
+R3
+R0
+w1789561488
+8pm_modulation_signal_gen.v
+Fpm_modulation_signal_gen.v
+L0 5
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 0
+R8
+R2
+vpm_modulator
+R1
+!i10b 1
+!s100 `E<D8<le^NT7nZznch?LU3
+IR<=dHO7=g@353=ZQ??mfa2
+R3
+R0
+w1789447722
+8pm_modulator.v
+Fpm_modulator.v
+L0 3
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 0
+R8
+R2
+vsine_wave_gen
+R1
+!i10b 1
+!s100 FU`SI8T4Wc[W1_79KezWi0
+IV@6jY<8;YAddNXS=jR9c40
+R3
+R0
+w1789384837
+8sine_wave_gen.v
+Fsine_wave_gen.v
+L0 3
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 0
+R8
+R2
+vvga_wave_display
+R1
+!i10b 1
+!s100 ZeLRO`UbzMN^1MM9;4`6=3
+IWh>hkjKWU<:=JmlL_gK2J2
+R3
+R0
+w1789561653
+8vga_wave_display.v
+Fvga_wave_display.v
+L0 4
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 0
+R8
+R2
+vvga_wave_display_tb
+R1
+!i10b 1
+!s100 ]Obl@20K7OHhhPTSHdXIA2
+IbPm4AE=fcKQdJ_>eJD2dm3
+R3
+R0
+w1789561710
+8vga_wave_display_tb.v
+Fvga_wave_display_tb.v
+L0 3
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 0
+R8
+R2
