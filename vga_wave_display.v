@@ -1,4 +1,4 @@
-// 640x480 VGA waveform display.
+// 640x480 VGA waveform display with oscilloscope-style rising-edge trigger.
 // A completed 640-sample block is displayed while the other block is filled,
 // so the waveform does not change halfway through a video frame.
 module vga_wave_display(
@@ -25,25 +25,30 @@ module vga_wave_display(
     reg [11:0] sample_mem1 [0:639];
     reg [9:0]  capture_idx;
     reg        capture_bank;
+    reg        capture_active;
     reg        capture_done;
     reg        display_bank;
     reg        display_valid;
+    reg [11:0] previous_wave_data;
 
     wire display_enable = (hcnt < H_ACTIVE) && (vcnt < V_ACTIVE);
     wire frame_start = (hcnt == 10'd0) && (vcnt == 10'd0);
     wire [9:0] display_addr = (hcnt < H_ACTIVE) ? hcnt : 10'd0;
     wire [11:0] display_sample;
-    wire [23:0] sample_ext;
-    wire [23:0] scaled_sample;
+    wire [21:0] sample_ext;
+    wire [31:0] scaled_product;
     wire [9:0]  waveform_y;
+    wire trigger_event;
 
     assign VGA_HSYNC = hs;
     assign VGA_VSYNC = vs;
 
     assign display_sample = display_bank ? sample_mem1[display_addr] : sample_mem0[display_addr];
-    assign sample_ext = {12'd0, display_sample};
-    assign scaled_sample = sample_ext * 24'd400;
-    assign waveform_y = 10'd440 - (scaled_sample >> 12);
+    assign sample_ext = {10'd0, display_sample};
+    assign scaled_product = sample_ext * 32'd400;
+    assign waveform_y = 10'd440 - scaled_product[21:12];
+    assign trigger_event = (previous_wave_data < 12'd2048) &&
+                           (wave_data >= 12'd2048);
 
     // Divide the 50 MHz system clock by two for the 25 MHz VGA pixel clock.
     always @(posedge clk or negedge reset_n) begin
@@ -91,23 +96,40 @@ module vga_wave_display(
         end
     end
 
-    // Fill one block, then wait for the next frame boundary before swapping.
+    // Track the incoming waveform and capture only after a rising mid-level
+    // crossing, which fixes the horizontal phase of periodic waveforms.
     always @(posedge clk25M or negedge reset_n) begin
         if (!reset_n) begin
-            capture_idx   <= 10'd0;
-            capture_bank  <= 1'b0;
-            capture_done  <= 1'b0;
-            display_bank  <= 1'b1;
+            capture_idx    <= 10'd0;
+            capture_bank   <= 1'b0;
+            capture_active <= 1'b0;
+            capture_done   <= 1'b0;
+            display_bank   <= 1'b1;
             display_valid <= 1'b0;
+            previous_wave_data <= 12'd2048;
         end
         else begin
+            previous_wave_data <= wave_data;
+
             if (capture_done) begin
                 if (frame_start) begin
                     display_bank  <= capture_bank;
                     display_valid <= 1'b1;
                     capture_bank  <= ~capture_bank;
                     capture_idx   <= 10'd0;
+                    capture_active <= 1'b0;
                     capture_done  <= 1'b0;
+                end
+            end
+            else if (!capture_active) begin
+                if (trigger_event) begin
+                    if (capture_bank)
+                        sample_mem1[0] <= wave_data;
+                    else
+                        sample_mem0[0] <= wave_data;
+
+                    capture_idx    <= 10'd1;
+                    capture_active <= 1'b1;
                 end
             end
             else begin
@@ -117,8 +139,9 @@ module vga_wave_display(
                     sample_mem0[capture_idx] <= wave_data;
 
                 if (capture_idx == H_ACTIVE - 1) begin
-                    capture_idx  <= 10'd0;
-                    capture_done <= 1'b1;
+                    capture_idx    <= 10'd0;
+                    capture_active <= 1'b0;
+                    capture_done   <= 1'b1;
                 end
                 else begin
                     capture_idx <= capture_idx + 1'b1;

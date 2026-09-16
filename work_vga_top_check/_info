@@ -1,0 +1,536 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Castin/Desktop/fpga-course-design/test/1_KXMS65P_10CL055_TEST
+vam_modulator
+Z1 !s110 1789554343
+!i10b 1
+!s100 O]Bi5j9<KS`BUzmenc:^E2
+Ij0LVjZl<X]7C_BNi:ZN1Y3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1789441520
+8am_modulator.v
+Fam_modulator.v
+L0 3
+Z3 OL;L;10.5;63
+r1
+!s85 0
+31
+Z4 !s108 1789554342.000000
+Z5 !s107 output_files\CESHI_altera.v|vga_wave_display.v|dac902_if.v|modulation_mode_ctrl.v|output_mode_mux.v|psk_modulator.v|psk_data_gen.v|fsk_modulator.v|fsk_data_gen.v|ask_modulator.v|ask_data_gen.v|fm_modulator.v|pm_modulator.v|am_modulator.v|fm_modulation_signal_gen.v|pm_modulation_signal_gen.v|modulation_signal_gen.v|frequency_ctrl.v|wave_select_ctrl.v|key_frontend.v|wave_mux.v|triangle_wave_gen.v|square_wave_gen.v|sine_wave_gen.v|phase_accumulator.v|
+Z6 !s90 -work|work_vga_top_check|phase_accumulator.v|sine_wave_gen.v|square_wave_gen.v|triangle_wave_gen.v|wave_mux.v|key_frontend.v|wave_select_ctrl.v|frequency_ctrl.v|modulation_signal_gen.v|pm_modulation_signal_gen.v|fm_modulation_signal_gen.v|am_modulator.v|pm_modulator.v|fm_modulator.v|ask_data_gen.v|ask_modulator.v|fsk_data_gen.v|fsk_modulator.v|psk_data_gen.v|psk_modulator.v|output_mode_mux.v|modulation_mode_ctrl.v|dac902_if.v|vga_wave_display.v|output_files\CESHI_altera.v|
+!i113 0
+Z7 o-work work_vga_top_check -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z8 tCvgOpt 0
+vask_data_gen
+R1
+!i10b 1
+!s100 TGkCF88MUW<BHi??>JohY1
+I0@]jA]lAOa>a5JeS?6QU81
+R2
+R0
+w1789469761
+8ask_data_gen.v
+Fask_data_gen.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+vask_modulator
+R1
+!i10b 1
+!s100 81SkFmFhj>VP@F[D8@WF`1
+IeCO947S?n9:5hUi8]7I`@2
+R2
+R0
+w1789469762
+8ask_modulator.v
+Fask_modulator.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+vCESHI_altera
+R1
+!i10b 1
+!s100 ^9CUQY]L=?WKV4XJ9;GBW1
+IbfRKj?nAac7I7cA[5137R3
+R2
+R0
+w1789537223
+8output_files\CESHI_altera.v
+Foutput_files\CESHI_altera.v
+L0 5
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+n@c@e@s@h@i_altera
+vdac902_if
+R1
+!i10b 1
+!s100 lLH[3D>QJID4k<No=N@Xk0
+IG=K^4I]9VTWj1Q6di4_RV1
+R2
+R0
+w1789383247
+8dac902_if.v
+Fdac902_if.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+vfm_modulation_signal_gen
+R1
+!i10b 1
+!s100 NoW]@hdUD83A9NZ8m2ncA3
+IXecj]97d7Ka8TY[NIDiTC1
+R2
+R0
+w1789468672
+8fm_modulation_signal_gen.v
+Ffm_modulation_signal_gen.v
+L0 4
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+vfm_modulator
+R1
+!i10b 1
+!s100 h110Vm`^Qnz7goOiB:]SM0
+IP8KF88beHIe=:AZClljn>1
+R2
+R0
+w1789450348
+8fm_modulator.v
+Ffm_modulator.v
+L0 4
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+vfrequency_ctrl
+Z9 !s110 1789554342
+!i10b 1
+!s100 SnnkUgLK`b@=VXcg5fL2c2
+I@G<kV6B]BB`fUa7B_a^062
+R2
+R0
+w1789387846
+8frequency_ctrl.v
+Ffrequency_ctrl.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+vfsk_data_gen
+R1
+!i10b 1
+!s100 SPYhEQ1=bAVf`Z;^TbK[j3
+IBET`e2Gz29JTaPa_G3cfP1
+R2
+R0
+w1789473980
+8fsk_data_gen.v
+Ffsk_data_gen.v
+L0 4
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+vfsk_modulator
+R1
+!i10b 1
+!s100 6I[<?iz[f5`e@Zoo=1;ci3
+I6zTANl?4H0<z]loCL<bJ@2
+R2
+R0
+w1789473981
+8fsk_modulator.v
+Ffsk_modulator.v
+L0 4
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+vkey_frontend
+R9
+!i10b 1
+!s100 G^`>KmO]0:Ce[?9A[i`IH2
+I]5][gKJh:Rh6AbX6jM:JW1
+R2
+R0
+w1789387309
+8key_frontend.v
+Fkey_frontend.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+vmodulation_mode_ctrl
+R1
+!i10b 1
+!s100 SX^z>jOfKOOUdL?S7X2kM2
+IZlJ8P19CE9QNz_PWP^Ok?2
+R2
+R0
+w1789475004
+8modulation_mode_ctrl.v
+Fmodulation_mode_ctrl.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+vmodulation_signal_gen
+R9
+!i10b 1
+!s100 CeL16dG4YG;giDai0e6?H1
+I`dJneMi8>=j=k]4kJk0342
+R2
+R0
+w1789392844
+8modulation_signal_gen.v
+Fmodulation_signal_gen.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+voutput_mode_mux
+R1
+!i10b 1
+!s100 PPWYBTaQGDkM:3?gFd18k2
+IBDhLbm44Q0_0<Q:]OkV`E0
+R2
+R0
+w1789475005
+8output_mode_mux.v
+Foutput_mode_mux.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+vphase_accumulator
+R9
+!i10b 1
+!s100 l]OHd?`H8MHn74b[>SleR0
+IbZA8d9AJF[aEOGM9cHhN01
+R2
+R0
+w1789387888
+8phase_accumulator.v
+Fphase_accumulator.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+vpm_modulation_signal_gen
+R9
+!i10b 1
+!s100 PV?ilbA5ZzIi004SEN56n0
+ImCd7o@:B<<5QI_ihg?iWX3
+R2
+R0
+w1789467209
+8pm_modulation_signal_gen.v
+Fpm_modulation_signal_gen.v
+L0 4
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+vpm_modulator
+R1
+!i10b 1
+!s100 `E<D8<le^NT7nZznch?LU3
+IVP`1LP6MbBSV>?9:Om4SY0
+R2
+R0
+w1789447722
+8pm_modulator.v
+Fpm_modulator.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+vpsk_data_gen
+R1
+!i10b 1
+!s100 KCX8jVEB<i`ZSiGgoXI<51
+I4:onj_J81bK@2OZlIT2@02
+R2
+R0
+w1789475002
+8psk_data_gen.v
+Fpsk_data_gen.v
+L0 4
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+vpsk_modulator
+R1
+!i10b 1
+!s100 k6X7:Cl>gQXz63aI1VGU?0
+I4?jnE:AHX1@0T0C9RgWZN2
+R2
+R0
+w1789475003
+8psk_modulator.v
+Fpsk_modulator.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+vsine_wave_gen
+R9
+!i10b 1
+!s100 FU`SI8T4Wc[W1_79KezWi0
+Ib<Z3M=WQlVMRAjOb1<=172
+R2
+R0
+w1789384837
+8sine_wave_gen.v
+Fsine_wave_gen.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+vsquare_wave_gen
+R9
+!i10b 1
+!s100 DD2:^Bi1II95<ZgCndmlK3
+IEoVXe6iLfJoaHhhG>LL9j1
+R2
+R0
+w1789384838
+8square_wave_gen.v
+Fsquare_wave_gen.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+vtriangle_wave_gen
+R9
+!i10b 1
+!s100 45=DOI^QSY3[Nm4RKzjS]1
+IC^Fo5nJRCmHo1zT]9EXkz1
+R2
+R0
+w1789385990
+8triangle_wave_gen.v
+Ftriangle_wave_gen.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+vvga_wave_display
+R1
+!i10b 1
+!s100 me0=W2F=DNoCn=?J^aoJ?2
+IIH[`G[4UZYAhDhb43>XZ=3
+R2
+R0
+w1789546155
+8vga_wave_display.v
+Fvga_wave_display.v
+L0 4
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+vwave_mux
+R9
+!i10b 1
+!s100 Y5FHg>hIe4nd2[24982]e3
+Im;1UmgV4@i;n4:=z7@31K3
+R2
+R0
+w1789385991
+8wave_mux.v
+Fwave_mux.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8
+vwave_select_ctrl
+R9
+!i10b 1
+!s100 E:lc_1@ZZE6l8Va_Sg64k1
+I<[j`@^3=XAljCY1^`;X2F2
+R2
+R0
+w1789387063
+8wave_select_ctrl.v
+Fwave_select_ctrl.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8

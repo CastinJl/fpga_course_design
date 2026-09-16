@@ -1,6 +1,6 @@
-# vsim -c -lib work_psk_check modulation_mode_ctrl_tb -do "run -all; quit -f" 
-# Start time: 20:25:47 on Sep 15,2026
-# ** Note: (vsim-3812) Design is being optimized...
+# vsim -c -lib work_vga_trigger_check vga_wave_display_tb -do "run -all; quit -f" 
+# Start time: 18:26:45 on Sep 16,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt
 # //  ModelSim SE-64 10.5 Feb 13 2016 
 # //
 # //  Copyright 1991-2016 Mentor Graphics Corporation
@@ -14,10 +14,10 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
-# Loading work.modulation_mode_ctrl_tb(fast)
+# Loading work.vga_wave_display_tb(fast)
 # run -all
-# MODULATION_MODE_TEST_PASS
-# ** Note: $finish    : modulation_mode_ctrl_tb.v(86)
-#    Time: 95 ns  Iteration: 1  Instance: /modulation_mode_ctrl_tb
-# End time: 20:25:48 on Sep 15,2026, Elapsed time: 0:00:01
+# VGA_TRIGGER_TEST_PASS
+# ** Note: $finish    : vga_wave_display_tb.v(59)
+#    Time: 26391 ns  Iteration: 0  Instance: /vga_wave_display_tb
+# End time: 18:26:46 on Sep 16,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0

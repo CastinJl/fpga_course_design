@@ -1,0 +1,61 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Castin/Desktop/fpga-course-design/test/1_KXMS65P_10CL055_TEST
+T_opt
+!s110 1789554369
+V@f_?OD5f@4AKCC6D<bQ4g0
+04 19 4 work vga_wave_display_tb fast 0
+=1-40c2ba4efc99-6aaa6eb8-2d6-7784
+o-quiet -auto_acc_if_foreign -work work_vga_trigger_check
+Z1 tCvgOpt 0
+n@_opt
+OL;O;10.5;63
+vvga_wave_display
+Z2 !s110 1789554342
+!i10b 1
+!s100 me0=W2F=DNoCn=?J^aoJ?2
+Im7SPB1jM1k:7>dfJ^212<1
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1789546155
+8vga_wave_display.v
+Fvga_wave_display.v
+L0 4
+Z4 OL;L;10.5;63
+r1
+!s85 0
+31
+Z5 !s108 1789554342.000000
+Z6 !s107 vga_wave_display_tb.v|vga_wave_display.v|
+Z7 !s90 -work|work_vga_trigger_check|vga_wave_display.v|vga_wave_display_tb.v|
+!i113 0
+Z8 o-work work_vga_trigger_check -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+vvga_wave_display_tb
+R2
+!i10b 1
+!s100 VPUO@dD^iK[U3U:XGGScU3
+Ij0WOMD<^hbj3[ezU36WHU3
+R3
+R0
+w1789554049
+8vga_wave_display_tb.v
+Fvga_wave_display_tb.v
+L0 3
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 0
+R8
+R1
