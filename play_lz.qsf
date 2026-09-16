@@ -249,7 +249,7 @@ set_location_assignment PIN_V8 -to SEG7[0]
 set_location_assignment PIN_W10 -to SEG7[1]
 set_location_assignment PIN_T10 -to SEG7[2]
 set_location_assignment PIN_U8 -to SEG7[3]
-set_global_assignment -name VERILOG_FILE output_files/vgaV.v
+set_global_assignment -name VERILOG_FILE vga_wave_display.v
 set_global_assignment -name VERILOG_FILE HDMI/video_driver.v
 set_global_assignment -name VERILOG_FILE HDMI/video_display.v
 set_global_assignment -name VERILOG_FILE HDMI/serializer_10_to_1.v
@@ -309,6 +309,8 @@ set_location_assignment PIN_G8 -to VGA_D[7]
 set_location_assignment PIN_E6 -to VGA_D[11]
 set_location_assignment PIN_A19 -to SPK_KX
 set_location_assignment PIN_C6 -to tmdX_data_n[1]
+
+
 
 
 

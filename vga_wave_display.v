@@ -1,0 +1,144 @@
+// 640x480 VGA waveform display.
+// A completed 640-sample block is displayed while the other block is filled,
+// so the waveform does not change halfway through a video frame.
+module vga_wave_display(
+    input             clk,
+    input             reset_n,
+    input      [11:0] wave_data,
+    output            VGA_HSYNC,
+    output            VGA_VSYNC,
+    output reg [11:0] VGA_D
+);
+
+    localparam integer H_ACTIVE = 640;
+    localparam integer H_TOTAL  = 801; // Keep the timing of the verified vgaV module.
+    localparam integer V_ACTIVE = 480;
+    localparam integer V_TOTAL  = 526;
+
+    reg        clk25M;
+    reg [9:0]  hcnt;
+    reg [9:0]  vcnt;
+    reg        hs;
+    reg        vs;
+
+    reg [11:0] sample_mem0 [0:639];
+    reg [11:0] sample_mem1 [0:639];
+    reg [9:0]  capture_idx;
+    reg        capture_bank;
+    reg        capture_done;
+    reg        display_bank;
+    reg        display_valid;
+
+    wire display_enable = (hcnt < H_ACTIVE) && (vcnt < V_ACTIVE);
+    wire frame_start = (hcnt == 10'd0) && (vcnt == 10'd0);
+    wire [9:0] display_addr = (hcnt < H_ACTIVE) ? hcnt : 10'd0;
+    wire [11:0] display_sample;
+    wire [23:0] sample_ext;
+    wire [23:0] scaled_sample;
+    wire [9:0]  waveform_y;
+
+    assign VGA_HSYNC = hs;
+    assign VGA_VSYNC = vs;
+
+    assign display_sample = display_bank ? sample_mem1[display_addr] : sample_mem0[display_addr];
+    assign sample_ext = {12'd0, display_sample};
+    assign scaled_sample = sample_ext * 24'd400;
+    assign waveform_y = 10'd440 - (scaled_sample >> 12);
+
+    // Divide the 50 MHz system clock by two for the 25 MHz VGA pixel clock.
+    always @(posedge clk or negedge reset_n) begin
+        if (!reset_n)
+            clk25M <= 1'b0;
+        else
+            clk25M <= ~clk25M;
+    end
+
+    always @(posedge clk25M or negedge reset_n) begin
+        if (!reset_n) begin
+            hcnt <= 10'd0;
+            vcnt <= 10'd0;
+        end
+        else begin
+            if (hcnt < H_TOTAL - 1)
+                hcnt <= hcnt + 1'b1;
+            else
+                hcnt <= 10'd0;
+
+            if (hcnt == H_TOTAL - 1) begin
+                if (vcnt < V_TOTAL - 1)
+                    vcnt <= vcnt + 1'b1;
+                else
+                    vcnt <= 10'd0;
+            end
+        end
+    end
+
+    always @(posedge clk25M or negedge reset_n) begin
+        if (!reset_n) begin
+            hs <= 1'b1;
+            vs <= 1'b1;
+        end
+        else begin
+            if ((hcnt >= 10'd656) && (hcnt < 10'd752))
+                hs <= 1'b0;
+            else
+                hs <= 1'b1;
+
+            if ((vcnt >= 10'd490) && (vcnt < 10'd492))
+                vs <= 1'b0;
+            else
+                vs <= 1'b1;
+        end
+    end
+
+    // Fill one block, then wait for the next frame boundary before swapping.
+    always @(posedge clk25M or negedge reset_n) begin
+        if (!reset_n) begin
+            capture_idx   <= 10'd0;
+            capture_bank  <= 1'b0;
+            capture_done  <= 1'b0;
+            display_bank  <= 1'b1;
+            display_valid <= 1'b0;
+        end
+        else begin
+            if (capture_done) begin
+                if (frame_start) begin
+                    display_bank  <= capture_bank;
+                    display_valid <= 1'b1;
+                    capture_bank  <= ~capture_bank;
+                    capture_idx   <= 10'd0;
+                    capture_done  <= 1'b0;
+                end
+            end
+            else begin
+                if (capture_bank)
+                    sample_mem1[capture_idx] <= wave_data;
+                else
+                    sample_mem0[capture_idx] <= wave_data;
+
+                if (capture_idx == H_ACTIVE - 1) begin
+                    capture_idx  <= 10'd0;
+                    capture_done <= 1'b1;
+                end
+                else begin
+                    capture_idx <= capture_idx + 1'b1;
+                end
+            end
+        end
+    end
+
+    // Draw a green waveform on a black background with a white center axis.
+    always @(posedge clk25M or negedge reset_n) begin
+        if (!reset_n)
+            VGA_D <= 12'h000;
+        else if (!display_enable || !display_valid)
+            VGA_D <= 12'h000;
+        else if ((vcnt >= waveform_y - 10'd1) && (vcnt <= waveform_y + 10'd1))
+            VGA_D <= 12'h0f0;
+        else if (vcnt == 10'd240)
+            VGA_D <= 12'hfff;
+        else
+            VGA_D <= 12'h000;
+    end
+
+endmodule
