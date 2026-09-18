@@ -217,6 +217,8 @@ set_location_assignment PIN_Y4 -to KEY4
 set_location_assignment PIN_Y3 -to KEY5
 set_location_assignment PIN_Y6 -to KEY6
 set_location_assignment PIN_W6 -to KEY7
+set_location_assignment PIN_A5 -to RXD
+set_location_assignment PIN_B7 -to TXD
 set_location_assignment PIN_H6 -to SEG0[0]
 set_location_assignment PIN_J7 -to SEG0[1]
 set_location_assignment PIN_K7 -to SEG0[2]
@@ -266,6 +268,10 @@ set_global_assignment -name QIP_FILE PLL.qip
 set_global_assignment -name QIP_FILE music.qip
 set_global_assignment -name VERILOG_FILE play_lz.v
 set_global_assignment -name VERILOG_FILE output_files/CESHI_altera.v
+set_global_assignment -name VERILOG_FILE uart_rx.v
+set_global_assignment -name VERILOG_FILE dot_matrix_display.v
+set_global_assignment -name VERILOG_FILE wave_download_ctrl.v
+set_global_assignment -name VERILOG_FILE arbitrary_wave_player.v
 set_global_assignment -name VERILOG_FILE sine_wave_gen.v
 set_global_assignment -name VERILOG_FILE dac902_if.v
 set_global_assignment -name VERILOG_FILE phase_accumulator.v
@@ -309,6 +315,9 @@ set_location_assignment PIN_G8 -to VGA_D[7]
 set_location_assignment PIN_E6 -to VGA_D[11]
 set_location_assignment PIN_A19 -to SPK_KX
 set_location_assignment PIN_C6 -to tmdX_data_n[1]
+
+
+
 
 
 

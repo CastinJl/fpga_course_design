@@ -7,6 +7,9 @@ module vga_wave_display(
     input      [11:0] wave_data,
     input             pm_enable,
     input             fm_enable,
+    input             arbitrary_enable,
+    input      [11:0] arbitrary_data,
+    output     [8:0]  arbitrary_addr,
     output            VGA_HSYNC,
     output            VGA_VSYNC,
     output reg [11:0] VGA_D
@@ -52,10 +55,17 @@ module vga_wave_display(
     wire [9:0] requested_capture_length = (pm_enable || fm_enable) ?
                                           PMFM_CAPTURE : H_ACTIVE;
 
+    // Map the 640 active VGA columns onto all 512 uploaded samples.
+    wire [19:0] arbitrary_addr_product = hcnt * 20'd512;
+    wire [8:0] arbitrary_display_addr = (hcnt < H_ACTIVE) ?
+                                        (arbitrary_addr_product / 20'd640) : 9'd0;
+
     assign VGA_HSYNC = hs;
     assign VGA_VSYNC = vs;
 
-    assign display_sample = display_bank ? sample_mem1[display_addr] : sample_mem0[display_addr];
+    assign arbitrary_addr = arbitrary_display_addr;
+    assign display_sample = arbitrary_enable ? arbitrary_data :
+                            (display_bank ? sample_mem1[display_addr] : sample_mem0[display_addr]);
     assign sample_ext = {10'd0, display_sample};
     assign scaled_product = sample_ext * 32'd400;
     assign waveform_y = 10'd440 - scaled_product[21:12];
@@ -179,7 +189,7 @@ module vga_wave_display(
     always @(posedge clk25M or negedge reset_n) begin
         if (!reset_n)
             VGA_D <= 12'h000;
-        else if (!display_enable || !display_valid)
+        else if (!display_enable || (!display_valid && !arbitrary_enable))
             VGA_D <= 12'h000;
         else if ((vcnt >= waveform_y - 10'd1) && (vcnt <= waveform_y + 10'd1))
             VGA_D <= 12'h0f0;

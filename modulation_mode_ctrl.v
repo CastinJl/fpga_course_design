@@ -1,17 +1,19 @@
-// Select normal, AM, PM, FM, ASK, FSK, or PSK output.
-// KEY7 cycles normal -> FM -> ASK -> FSK -> PSK -> normal.
+// Select normal, AM, PM, FM, ASK, FSK, PSK, or arbitrary waveform output.
+// KEY7 cycles normal -> FM -> ASK -> FSK -> PSK -> arbitrary -> normal.
 module modulation_mode_ctrl(
     input             clk,
     input             rst,
     input             am_key_press,
     input             pm_key_press,
     input             fm_key_press,
+    input             arbitrary_available,
     output reg        am_enable,
     output reg        pm_enable,
     output reg        fm_enable,
     output reg        ask_enable,
     output reg        fsk_enable,
-    output reg        psk_enable
+    output reg        psk_enable,
+    output reg        arbitrary_enable
 );
 
     always @(posedge clk or negedge rst) begin
@@ -22,6 +24,7 @@ module modulation_mode_ctrl(
             ask_enable <= 1'b0;
             fsk_enable <= 1'b0;
             psk_enable <= 1'b0;
+            arbitrary_enable <= 1'b0;
         end
         else if (am_key_press) begin
             if (am_enable) begin
@@ -31,6 +34,7 @@ module modulation_mode_ctrl(
                 ask_enable <= 1'b0;
                 fsk_enable <= 1'b0;
                 psk_enable <= 1'b0;
+                arbitrary_enable <= 1'b0;
             end
             else begin
                 am_enable <= 1'b1;
@@ -39,6 +43,7 @@ module modulation_mode_ctrl(
                 ask_enable <= 1'b0;
                 fsk_enable <= 1'b0;
                 psk_enable <= 1'b0;
+                arbitrary_enable <= 1'b0;
             end
         end
         else if (pm_key_press) begin
@@ -49,6 +54,7 @@ module modulation_mode_ctrl(
                 ask_enable <= 1'b0;
                 fsk_enable <= 1'b0;
                 psk_enable <= 1'b0;
+                arbitrary_enable <= 1'b0;
             end
             else begin
                 pm_enable <= 1'b1;
@@ -57,6 +63,7 @@ module modulation_mode_ctrl(
                 ask_enable <= 1'b0;
                 fsk_enable <= 1'b0;
                 psk_enable <= 1'b0;
+                arbitrary_enable <= 1'b0;
             end
         end
         else if (fm_key_press) begin
@@ -67,6 +74,7 @@ module modulation_mode_ctrl(
                 ask_enable <= 1'b1;
                 fsk_enable <= 1'b0;
                 psk_enable <= 1'b0;
+                arbitrary_enable <= 1'b0;
             end
             else if (ask_enable) begin
                 am_enable <= 1'b0;
@@ -75,6 +83,7 @@ module modulation_mode_ctrl(
                 ask_enable <= 1'b0;
                 fsk_enable <= 1'b1;
                 psk_enable <= 1'b0;
+                arbitrary_enable <= 1'b0;
             end
             else if (fsk_enable) begin
                 am_enable <= 1'b0;
@@ -83,6 +92,7 @@ module modulation_mode_ctrl(
                 ask_enable <= 1'b0;
                 fsk_enable <= 1'b0;
                 psk_enable <= 1'b1;
+                arbitrary_enable <= 1'b0;
             end
             else if (psk_enable) begin
                 am_enable <= 1'b0;
@@ -91,6 +101,10 @@ module modulation_mode_ctrl(
                 ask_enable <= 1'b0;
                 fsk_enable <= 1'b0;
                 psk_enable <= 1'b0;
+                arbitrary_enable <= arbitrary_available;
+            end
+            else if (arbitrary_enable) begin
+                arbitrary_enable <= 1'b0;
             end
             else begin
                 fm_enable <= 1'b1;
@@ -99,6 +113,7 @@ module modulation_mode_ctrl(
                 ask_enable <= 1'b0;
                 fsk_enable <= 1'b0;
                 psk_enable <= 1'b0;
+                arbitrary_enable <= 1'b0;
             end
         end
     end

@@ -6,6 +6,9 @@ module vga_wave_display_tb;
     reg  [11:0] wave_data;
     reg         pm_enable;
     reg         fm_enable;
+    reg         arbitrary_enable;
+    reg  [11:0] arbitrary_data;
+    wire [8:0]  arbitrary_addr;
     wire        vga_hsync;
     wire        vga_vsync;
     wire [11:0] vga_d;
@@ -17,6 +20,9 @@ module vga_wave_display_tb;
         .wave_data (wave_data),
         .pm_enable (pm_enable),
         .fm_enable (fm_enable),
+        .arbitrary_enable (arbitrary_enable),
+        .arbitrary_data (arbitrary_data),
+        .arbitrary_addr (arbitrary_addr),
         .VGA_HSYNC (vga_hsync),
         .VGA_VSYNC (vga_vsync),
         .VGA_D     (vga_d)
@@ -31,6 +37,8 @@ module vga_wave_display_tb;
         wave_data = 12'd1000;
         pm_enable = 1'b0;
         fm_enable = 1'b0;
+        arbitrary_enable = 1'b0;
+        arbitrary_data = 12'd0;
         #25;
         reset_n = 1'b1;
 
